@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-  def show 
-   @user = User.find(params[:id])
+  def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at: :desc)
   end
   
   def new
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     if @user.update(user_params)
+      flash[:success] = "編集できました。"
       redirect_to @user
     else
       render :edit
