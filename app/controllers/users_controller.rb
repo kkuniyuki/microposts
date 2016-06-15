@@ -41,8 +41,6 @@ before_action :authenticate_user!, only: [:edit, :update]
   
   def following
     p @user = User.find(params[:id])
-    # p re1 = Relationship.create(follower_id: 1, followed_id: 2)
-    # p re2 = Relationship.create(follower_id: 1, followed_id: 3)
     followingall = Relationship.where(follower_id: params[:id])
     
     p @following_users = Array.new
@@ -54,8 +52,6 @@ before_action :authenticate_user!, only: [:edit, :update]
   
   def follower
     p @user = User.find(params[:id])
-    # p re1 = Relationship.create(follower_id: 2, followed_id: 1)
-    # p re2 = Relationship.create(follower_id: 3, followed_id: 1)
     followerall = Relationship.where(followed_id: params[:id])
     p followerall
     
