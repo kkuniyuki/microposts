@@ -3,21 +3,31 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
       </h1>
     </section>
   </aside>
+  
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-    <% end %>
+    
+    <%= @user.name %>
+    <br>
   </div>
+<br>
+<br>
+<!--表示の仕方考える-->
+
+<h3>フォロー一覧</h3><br>
+<% @following_users.each do |user| %>
+<%= user.name %>さん。<br>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to 'フォロワー一覧', follower_user_path %>
+
+
 </div>
 
-<%= link_to 'フォロー一覧', following_user_path %>
-<br>
-<%= link_to 'フォロワー一覧', follower_user_path %>
+
