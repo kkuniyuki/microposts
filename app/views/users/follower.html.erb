@@ -19,7 +19,8 @@
 
 <h3>フォロワー一覧</h3><br>
 <% @follower_users.each do |user| %>
-<%= user.name %>さん。<br>
+<%= gravatar_for user, :size => '40x40' %>
+<%= link_to user.name, user_path(:id => user.id) %><br><br><br>
 <% end %>
 
 <br>
