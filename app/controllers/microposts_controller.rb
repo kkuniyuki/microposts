@@ -20,6 +20,11 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
   
+  def sure
+    p @sure = +1
+    redirect_to request.referrer || root_url
+  end
+  
   private
   def micropost_params
     params.require(:micropost).permit(:content)

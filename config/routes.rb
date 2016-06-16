@@ -17,6 +17,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :microposts do
+    member do
+      get 'sure'
+    end
+  end
+
   # get 'static_pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.

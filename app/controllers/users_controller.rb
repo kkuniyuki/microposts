@@ -47,7 +47,9 @@ before_action :authenticate_user!, only: [:edit, :update]
     
     followingall.each do |following|
       p @following_users << User.find_by(id: following.followed_id)
-    end    
+    end     
+    @following_users = User.page(params[:page])
+
   end
   
   def follower
@@ -60,7 +62,8 @@ before_action :authenticate_user!, only: [:edit, :update]
     followerall.each do |follower|
       p @follower_users << User.find_by(id: follower.follower_id)
     end    
-    p @follower_users
+    p @follower_users = User.page(params[:page])
+
   end
 
   private
