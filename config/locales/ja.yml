@@ -200,3 +200,20 @@ ja:
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       short: "%y/%m/%d %H:%M"
     pm: 午後
+  
+  log:
+   login: "ログイン"
+   logout: "ログアウト"
+   sign_up_now: "新規登録"
+   
+  micropost:
+   delete: "削除"
+   post: "投稿"
+   content: "つぶやいてください..."
+   my-page: "マイページ"
+   
+  follow:
+   following: "フォロー"
+   unfollowing: "フォローを外す"
+   followerall: "フォロワー一覧"
+   followall: "フォロー一覧"

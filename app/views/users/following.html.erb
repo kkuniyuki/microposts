@@ -15,7 +15,7 @@
 
 <!--表示の仕方考える-->
 
-<h3>フォロー一覧</h3><br>
+<h3><%= t("follow.followerall")%></h3><br>
 
 <% @following_users.each do |user| %>
 <%= gravatar_for user, :size => '40x40' %>
@@ -25,7 +25,7 @@
 <br>
 <br>
 
-<%= link_to 'フォロワー一覧', follower_user_path %>
+<%= link_to t("follow.followerall"), follower_user_path %>
 
 
 </div>
